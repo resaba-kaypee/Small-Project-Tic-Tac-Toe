@@ -98,7 +98,7 @@ function checkTie(){
 function minimax(newBoard, player){
   let availSpots = emptySquares(newBoard);
 
-  if(checkWin(newBoard, player)){
+  if(checkWin(newBoard, game.human)){
     return {score: -10};
   } else if(checkWin(newBoard, game.ai)){
     return {score: 10};
@@ -120,7 +120,12 @@ function minimax(newBoard, player){
       move.score = result.score;
     }
     newBoard[availSpots[i]] = move.index;
-    moves.push(move)
+    // moves.push(move)
+    if ((player === game.ai && move.score === 10) || (player === game.human && move.score === -10)){
+      return move;
+    } else{
+      moves.push(move);
+    }
   }
 
   let bestMove;
@@ -146,111 +151,6 @@ function minimax(newBoard, player){
 
 startGame();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const box = document.getElementById("board");
-// const output = document.getElementById("output");
-// const reset = document.getElementById("reset")
-
-// let game = {
-//   isClicked: false,
-//   crossGame: "X",
-//   roundGame: "O",
-//   cross: [],
-//   round: [],
-//   winning_Array: [
-//     [1, 2, 3],
-//     [4, 5, 6],
-//     [7, 8, 9],
-//     [1, 4, 7],
-//     [2, 5, 8],
-//     [3, 6, 9],
-//     [1, 5, 9],
-//     [3, 5, 7]
-//   ]
-// };
-
-// box.addEventListener("click", e => {
-//   if (e.target.hasAttribute("data-box")) {
-//     getInput(e.target);
-//   }
-// });
-
-// reset.addEventListener('click', () =>{
-//   window.location.reload();
-// })
-
-// function getInput(data) {
-//   if (!game.isClicked) {
-//     data.innerHTML = game.crossGame;
-//     getData(data, game.cross, game.crossGame);
-//     game.isClicked = !game.isClicked;
-//   } else if (game.isClicked) {
-//     data.innerHTML = game.roundGame;
-//     getData(data, game.round, game.roundGame);
-//     game.isClicked = !game.isClicked;
-//   }
-//   data.classList.add("disable");
-// }
-
-// function getData(data, whichGame, player) {
-//   let box = data.getAttribute("data-box");
-//   if (!game.isClicked) game.cross.push(box);
-//   else if (game.isClicked) game.round.push(box);
-
-//   data.removeEventListener("click", getInput);
-//   checkMoves(whichGame, player);
-// }
-
-// function checkMoves(arr, player) {
-//   let compare = arr.map(v => parseInt(v, 10)).sort();
-//   for (let i = 0; i < game.winning_Array.length; i++) {
-//     if (
-//       compare.includes(game.winning_Array[i][0]) &&
-//       compare.includes(game.winning_Array[i][1]) &&
-//       compare.includes(game.winning_Array[i][2])
-//     ) {
-//       box.classList.add("disable");
-//       output.textContent = `${player} wins the game!`;
-//     }
-//   }
-//   if (game.cross.length + game.round.length == 9) {
-//     output.textContent = `It's a tie`;
-//   }
-// }
 
 // $(function() {
 //   let game = {
