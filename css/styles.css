@@ -1,0 +1,99 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #1c1b1b;
+  color: #666666;
+  font-family: "Comic Sans MS";
+}
+
+#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 360px;
+  overflow: hidden;
+  margin: 40px auto;
+  background: #666666;
+  padding-bottom: 40px;
+  border-radius: 10px;
+  border: 5px outset yellow;
+}
+
+#container h1 {
+  text-align: center;
+  color: white;
+}
+
+#container p {
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 12px;
+  text-align: center;
+  color: red;
+}
+
+#board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 0;
+}
+
+#board ul {
+  height: 100%;
+}
+
+#board li {
+  text-align: center;
+  font-size: 60px;
+  background: #333333;
+  color: #ccc;
+  list-style: none;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  width: 93px;
+  height: 93px;
+  margin-bottom: 18px;
+}
+
+#board li:hover {
+  cursor: pointer;
+  background: black;
+}
+
+#reset {
+  border: 1px solid yellow;
+  background: #444;
+  color: white;
+  width: 70%;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+#reset:hover {
+  cursor: pointer;
+  background: black;
+}
+
+footer {
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+/*# sourceMappingURL=styles.css.map */

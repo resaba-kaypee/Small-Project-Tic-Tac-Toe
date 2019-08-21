@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+$darkBoard: #1c1b1b;
+$darkGrayrish: #666666;
+$lightGrayrish: #333333;
+
+body {
+  padding: 0;
+  margin: 0;
+  background: $darkBoard;
+  color: $darkGrayrish;
+  font-family: "Comic Sans MS";
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  overflow: hidden;
+  margin: 40px auto;
+  background: $darkGrayrish;
+  padding-bottom: 40px;
+  border-radius: 10px;
+  border: 5px outset yellow;
+  h1 {
+    text-align: center;
+    color: white;
+  }
+  p {
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 12px;
+    text-align: center;
+    color: red;
+  }
+}
+
+#board {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  padding: 0;
+  ul {
+    height: 100%;
+  }
+  li {
+    text-align: center;
+    font-size: 60px;
+    background: $lightGrayrish;
+    color: #ccc;
+    list-style: none;
+    border: 1px solid yellow;
+    border-radius: 10px;
+    width: 93px;
+    height: 93px;
+    margin-bottom: 18px;
+    &:hover {
+      cursor: pointer;
+      background: black;
+    }
+  }
+}
+
+#reset {
+  border: 1px solid yellow;
+  background: #444;
+  color: white;
+  width: 70%;
+  padding: 15px;
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+    background: black;
+  }
+}
+
+footer {
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
